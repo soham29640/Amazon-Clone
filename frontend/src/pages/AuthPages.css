@@ -1,0 +1,21 @@
+.auth-page { min-height: 100vh; background: var(--bg-light); display: flex; flex-direction: column; align-items: center; padding: 20px 16px; }
+.auth-box { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 32px 28px; width: 100%; max-width: 370px; margin-top: 20px; }
+.auth-logo { font-size: 28px; font-weight: 800; color: var(--amazon-dark); text-align: center; margin-bottom: 20px; }
+.auth-logo span { color: var(--amazon-orange); }
+.auth-title { font-size: 24px; font-weight: 500; margin-bottom: 18px; }
+.auth-error { background: #fff0f0; border: 1px solid #f5c6cb; color: #721c24; padding: 10px 14px; border-radius: 4px; font-size: 13px; margin-bottom: 14px; }
+.auth-form { display: flex; flex-direction: column; gap: 14px; margin-bottom: 14px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label { font-size: 13px; font-weight: 700; }
+.form-group input { padding: 8px 10px; border: 1px solid var(--border); border-radius: 3px; font-size: 14px; outline: none; }
+.form-group input:focus { border-color: var(--amazon-orange); box-shadow: 0 0 0 3px rgba(255,153,0,0.15); }
+.auth-btn { width: 100%; padding: 10px; background: var(--amazon-yellow); border: 1px solid #A88734; border-radius: 4px; font-size: 14px; font-weight: 600; cursor: pointer; transition: var(--transition); }
+.auth-btn:hover:not(:disabled) { background: var(--amazon-yellow-hover); }
+.auth-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.auth-terms { font-size: 12px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 14px; }
+.auth-terms a { color: var(--text-link); }
+.auth-divider { display: flex; align-items: center; gap: 10px; margin: 12px 0; }
+.auth-divider::before, .auth-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.auth-divider span { font-size: 12px; color: var(--text-secondary); white-space: nowrap; }
+.auth-create-btn { display: block; width: 100%; text-align: center; padding: 10px; border: 1px solid var(--border); border-radius: 4px; font-size: 13px; color: var(--text-primary); background: linear-gradient(to bottom, #f7f8fa, #e7e9ec); font-weight: 500; transition: var(--transition); }
+.auth-create-btn:hover { background: linear-gradient(to bottom, #e7e9ec, #d9dce1); }

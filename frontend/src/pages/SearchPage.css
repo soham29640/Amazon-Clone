@@ -1,0 +1,29 @@
+.search-page { padding: 16px; }
+.search-layout { display: grid; grid-template-columns: 220px 1fr; gap: 20px; }
+
+/* Sidebar */
+.filters-sidebar { background: white; border-radius: 4px; padding: 16px; height: fit-content; border: 1px solid var(--border); }
+.filter-title { font-size: 16px; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.filter-section { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+.filter-section h4 { font-size: 14px; font-weight: 700; margin-bottom: 10px; }
+.filter-check { display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; }
+.filter-check input { accent-color: var(--amazon-orange); }
+.price-input { width: 100%; padding: 8px; border: 1px solid var(--border); border-radius: 4px; font-size: 13px; outline: none; }
+.price-input:focus { border-color: var(--amazon-orange); }
+.filter-star-row { display: flex; align-items: center; gap: 6px; font-size: 13px; padding: 4px 0; cursor: pointer; color: var(--amazon-orange); }
+.filter-star-row span:last-child { color: var(--text-link); font-size: 12px; }
+
+/* Results */
+.results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; background: white; padding: 10px 14px; border-radius: 4px; border: 1px solid var(--border); }
+.results-count { font-size: 14px; color: var(--text-secondary); }
+.results-count strong { color: var(--text-primary); }
+.sort-row { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.sort-row select { padding: 4px 8px; border: 1px solid var(--border); border-radius: 4px; font-size: 13px; cursor: pointer; }
+.search-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; }
+.no-results { text-align: center; padding: 48px; font-size: 15px; color: var(--text-secondary); }
+.no-results strong { color: var(--text-primary); }
+
+@media (max-width: 768px) {
+  .search-layout { grid-template-columns: 1fr; }
+  .filters-sidebar { display: none; }
+}

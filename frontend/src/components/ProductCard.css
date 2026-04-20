@@ -1,0 +1,115 @@
+.product-card {
+  background: var(--bg-white);
+  border-radius: var(--radius);
+  padding: 16px;
+  position: relative;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid transparent;
+}
+
+.product-card:hover {
+  box-shadow: var(--shadow-hover);
+  border-color: var(--border);
+  transform: translateY(-2px);
+}
+
+.product-link {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+}
+
+/* Badges */
+.badge-discount {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--amazon-red);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 2px;
+  z-index: 1;
+}
+.badge-prime {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #00a8e0;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Image */
+.product-image-wrapper {
+  aspect-ratio: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  background: #fafafa;
+  border-radius: 4px;
+}
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.product-card:hover .product-image { transform: scale(1.05); }
+
+/* Info */
+.product-info { flex: 1; }
+.product-name {
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.4;
+  margin-bottom: 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.product-name:hover { color: var(--amazon-orange); }
+
+/* Stars */
+.star-rating {
+  color: var(--amazon-orange);
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+.rating-count { color: var(--text-link); font-size: 12px; margin-left: 4px; }
+
+/* Price */
+.product-price-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; }
+.product-price { font-size: 18px; font-weight: 700; color: var(--amazon-red); }
+.product-original-price { font-size: 13px; color: var(--text-secondary); text-decoration: line-through; }
+
+/* Prime */
+.prime-badge { font-size: 11px; color: #007185; margin-top: 4px; }
+
+/* Button */
+.add-to-cart-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 8px;
+  background: var(--amazon-yellow);
+  border: 1px solid #A88734;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+.add-to-cart-btn:hover { background: var(--amazon-yellow-hover); }

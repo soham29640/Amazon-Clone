@@ -1,0 +1,33 @@
+.orders-page { padding: 20px 16px; }
+.orders-title { font-size: 26px; font-weight: 400; margin-bottom: 20px; }
+.orders-login { padding: 60px 16px; }
+.orders-login-box { max-width: 400px; margin: 0 auto; text-align: center; background: white; padding: 40px; border-radius: 8px; box-shadow: var(--shadow); }
+.orders-login-box h2 { font-size: 22px; margin-bottom: 10px; }
+.orders-login-box p { color: var(--text-secondary); margin-bottom: 20px; }
+.no-orders { text-align: center; padding: 60px; }
+.no-orders p { font-size: 18px; color: var(--text-secondary); margin-bottom: 20px; }
+.orders-list { display: flex; flex-direction: column; gap: 16px; }
+
+.order-card { background: white; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+.order-header { background: var(--bg-light); padding: 14px 18px; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; border-bottom: 1px solid var(--border); }
+.order-meta { display: flex; gap: 28px; }
+.meta-label { display: block; font-size: 11px; color: var(--text-secondary); text-transform: uppercase; font-weight: 600; margin-bottom: 2px; }
+.meta-value { font-size: 13px; font-weight: 600; }
+.address-link { color: var(--text-link); cursor: pointer; }
+.order-id-section { text-align: right; }
+.order-actions { display: flex; gap: 8px; margin-top: 6px; }
+.order-action-btn { background: none; color: var(--text-link); font-size: 13px; padding: 4px 0; border-bottom: 1px solid var(--text-link); }
+.order-action-btn:hover { color: var(--amazon-orange); border-color: var(--amazon-orange); }
+
+.order-body { padding: 16px 18px; }
+.order-status-bar { margin-bottom: 14px; }
+.status-text { font-size: 15px; font-weight: 600; }
+.order-items { display: flex; flex-wrap: wrap; gap: 16px; }
+.order-item { display: flex; gap: 14px; }
+.order-item img { width: 80px; height: 80px; object-fit: contain; border: 1px solid var(--border); border-radius: 4px; }
+.order-item-info { display: flex; flex-direction: column; gap: 4px; }
+.order-item-name { font-size: 14px; color: var(--text-link); font-weight: 500; }
+.order-item-qty { font-size: 12px; color: var(--text-secondary); }
+.order-item-btns { display: flex; gap: 8px; margin-top: 4px; }
+.order-item-btn { background: var(--amazon-yellow); border: 1px solid #A88734; border-radius: 20px; padding: 5px 14px; font-size: 12px; font-weight: 600; cursor: pointer; color: var(--text-primary); transition: var(--transition); }
+.order-item-btn:hover { background: var(--amazon-yellow-hover); }
