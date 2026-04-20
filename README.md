@@ -1,6 +1,6 @@
-# 🛒 Amazon Clone — Full Stack
+# 🛒 Shoply — Full Stack
 
-A full-stack Amazon clone built with **React.js** (Frontend) · **Java Spring Boot** (Backend) · **MySQL / H2** (Database).
+A full-stack e-commerce application built with **React.js** (Frontend) · **Java Spring Boot** (Backend) · **MySQL / H2** (Database).
 
 ---
 
@@ -38,7 +38,7 @@ A full-stack Amazon clone built with **React.js** (Frontend) · **Java Spring Bo
 ## 🗂️ Project Structure
 
 ```
-amazon-clone/
+shoply/
 │
 ├── frontend/                          ← React.js SPA
 │   ├── public/
@@ -77,7 +77,7 @@ amazon-clone/
     ├── pom.xml                        ← Maven dependencies
     └── src/main/
         ├── java/com/amazon/
-        │   ├── AmazonCloneApplication.java   ← Main entry point (@SpringBootApplication)
+        │   ├── ShoplyApplication.java        ← Main entry point (@SpringBootApplication)
         │   │
         │   ├── config/
         │   │   ├── SecurityConfig.java       ← Filter chain, CORS, route permissions
@@ -127,7 +127,7 @@ amazon-clone/
 mvn spring-boot:run
        │
        ▼
-AmazonCloneApplication.main()           ← @SpringBootApplication scans all beans
+ShoplyApplication.main()                ← @SpringBootApplication scans all beans
        │
        ├─► application.properties loaded ← DB URL, JWT secret, JPA settings
        │
@@ -261,7 +261,7 @@ Browser (React SPA)
 
 | Step | File | What happens |
 |------|------|--------------|
-| 1 | `AmazonCloneApplication.java` | `SpringApplication.run()` bootstraps the IoC container, triggers component scan |
+| 1 | `ShoplyApplication.java` | `SpringApplication.run()` bootstraps the IoC container, triggers component scan |
 | 2 | `application.properties` | Loaded by Spring Environment; configures datasource, JPA, JWT secret, logging |
 | 3 | **Hibernate DDL** | `spring.jpa.hibernate.ddl-auto=create-drop` — tables created from `@Entity` models on startup |
 | 4 | `data.sql` | Spring executes seed SQL after schema creation; 12 products are inserted |
@@ -470,8 +470,8 @@ reviews
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/soham29640/Amazon-Clone.git
-cd Amazon-Clone
+git clone https://github.com/soham29640/Shoply.git
+cd Shoply
 ```
 
 ### 2. Start the backend
@@ -506,7 +506,7 @@ Frontend starts at **http://localhost:3000**
 
 ```properties
 # ── Development (default) ──────────────────────────────
-spring.datasource.url=jdbc:h2:mem:amazon_clone
+spring.datasource.url=jdbc:h2:mem:shoply
 spring.datasource.driver-class-name=org.h2.Driver
 spring.datasource.username=sa
 spring.datasource.password=
@@ -514,7 +514,7 @@ spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 spring.jpa.hibernate.ddl-auto=create-drop   # schema recreated on every restart
 
 # ── Production (MySQL) — uncomment & fill in ──────────
-# spring.datasource.url=jdbc:mysql://localhost:3306/amazon_clone?useSSL=false&serverTimezone=UTC
+# spring.datasource.url=jdbc:mysql://localhost:3306/shoply?useSSL=false&serverTimezone=UTC
 # spring.datasource.username=root
 # spring.datasource.password=your_password
 # spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
