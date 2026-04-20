@@ -1,0 +1,154 @@
+# ===========================
+# AMAZON CLONE - .gitignore
+# ===========================
+
+# ====== FRONTEND (React) ======
+
+# Dependencies
+frontend/node_modules/
+node_modules/
+
+# Production build
+frontend/build/
+build/
+
+# Environment variables (NEVER commit these)
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cache
+frontend/.cache/
+.eslintcache
+
+# ====== BACKEND (Spring Boot) ======
+
+# Maven build output
+backend/target/
+target/
+
+# Maven wrapper (optional - keep if you want)
+# !backend/mvnw
+# !backend/.mvn/
+
+# Environment & secrets (NEVER commit)
+backend/src/main/resources/application-prod.properties
+backend/src/main/resources/application-local.properties
+*.env
+
+# Logs
+*.log
+logs/
+backend/logs/
+
+# ====== DATABASE ======
+
+# H2 database files (if file-based)
+*.db
+*.mv.db
+*.trace.db
+
+# MySQL dump files
+*.sql.bak
+dump.sql
+
+# ====== IDE & EDITOR ======
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# NetBeans
+nbproject/
+
+# ====== OPERATING SYSTEM ======
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# ====== SECURITY (NEVER COMMIT) ======
+
+# API Keys & Secrets
+*.pem
+*.key
+*.cert
+*.jks
+*.keystore
+*.p12
+secrets.properties
+secret.txt
+
+# JWT secret files
+jwt-secret.txt
+
+# ====== MISC ======
+
+# Zip files
+*.zip
+*.tar.gz
+*.rar
+
+# Compiled class files
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# Testing
+frontend/coverage/
