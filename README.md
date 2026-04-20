@@ -1,6 +1,6 @@
 # 🛒 Shoply — Full Stack
 
-A full-stack e-commerce application built with **React.js** (Frontend) · **Java Spring Boot** (Backend) · **MySQL / H2** (Database).
+A full-stack e-commerce application built with **React.js** (Frontend) · **Java Spring Boot** (Backend) · **MySQL** (Database).
 
 ---
 
@@ -29,9 +29,9 @@ A full-stack e-commerce application built with **React.js** (Frontend) · **Java
 | Frontend | React.js 18, React Router v6, Context API, Axios, CSS3 |
 | Backend | Java 17, Spring Boot 3.2, Spring Security, Spring Data JPA |
 | Auth | JWT (jjwt 0.11.5), BCrypt password hashing |
-| Database | MySQL 8 (production) · H2 in-memory (development/testing) |
+| Database | MySQL 8 | Relational RDBMS for persistent data |
 | Build tools | Maven (backend) · npm (frontend) |
-| Dev extras | Lombok, Spring DevTools, H2 Console |
+| Dev extras | Lombok, Spring DevTools |
 
 ---
 
@@ -131,14 +131,14 @@ ShoplyApplication.main()                ← @SpringBootApplication scans all bea
        │
        ├─► application.properties loaded ← DB URL, JWT secret, JPA settings
        │
-       ├─► Hibernate DDL (create-drop)   ← Tables auto-created from @Entity classes
+       ├─► Hibernate DDL (update)        ← Tables auto-created/updated from @Entity classes
        │
        ├─► data.sql executed             ← 12 seed products inserted into DB
        │
        ├─► SecurityConfig bean created
        │      └─ JwtAuthFilter registered before UsernamePasswordAuthenticationFilter
        │      └─ CORS allowed for http://localhost:3000
-       │      └─ Public routes: /api/auth/**, /api/products/**, /h2-console/**
+       │      └─ Public routes: /api/auth/**, /api/products/**
        │      └─ Protected routes: /api/cart/**, /api/orders/**
        │
        └─► Embedded Tomcat starts on port 8080
@@ -208,7 +208,7 @@ Browser (React SPA)
   Repository Layer        Spring Data JPA interfaces → Hibernate → SQL
         │
         ▼
-  Database                H2 (dev) or MySQL (prod)
+  Database                MySQL
         │
         │  8. Entity returned, serialised to JSON
         ▼
@@ -263,7 +263,7 @@ Browser (React SPA)
 |------|------|--------------|
 | 1 | `ShoplyApplication.java` | `SpringApplication.run()` bootstraps the IoC container, triggers component scan |
 | 2 | `application.properties` | Loaded by Spring Environment; configures datasource, JPA, JWT secret, logging |
-| 3 | **Hibernate DDL** | `spring.jpa.hibernate.ddl-auto=create-drop` — tables created from `@Entity` models on startup |
+| 3 | **Hibernate DDL** | `spring.jpa.hibernate.ddl-auto=update` — tables auto-created/updated from `@Entity` models on startup |
 | 4 | `data.sql` | Spring executes seed SQL after schema creation; 12 products are inserted |
 | 5 | `SecurityConfig.java` | `SecurityFilterChain` bean constructed; CORS rules and route access rules registered |
 | 6 | `JwtAuthFilter.java` | Added before `UsernamePasswordAuthenticationFilter`; runs on every incoming request |
@@ -465,7 +465,7 @@ reviews
 | Maven | 3.8 |
 | Node.js | 18 |
 | npm | 9 |
-| MySQL | 8 *(optional — H2 used by default)* |
+| MySQL | 8 |
 
 ### 1. Clone the repository
 
@@ -478,15 +478,10 @@ cd Shoply
 
 ```bash
 cd backend
-
-# (Optional) Switch to MySQL — edit application.properties first
-# See "Environment Configuration" section below
-
 mvn spring-boot:run
 ```
 
-Backend starts at **http://localhost:8080**  
-H2 console (dev mode) available at **http://localhost:8080/h2-console**
+Backend starts at **http://localhost:8080**
 
 ### 3. Start the frontend
 
@@ -505,21 +500,13 @@ Frontend starts at **http://localhost:3000**
 ### `backend/src/main/resources/application.properties`
 
 ```properties
-# ── Development (default) ──────────────────────────────
-spring.datasource.url=jdbc:h2:mem:shoply
-spring.datasource.driver-class-name=org.h2.Driver
-spring.datasource.username=sa
-spring.datasource.password=
-spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
-spring.jpa.hibernate.ddl-auto=create-drop   # schema recreated on every restart
-
-# ── Production (MySQL) — uncomment & fill in ──────────
-# spring.datasource.url=jdbc:mysql://localhost:3306/shoply?useSSL=false&serverTimezone=UTC
-# spring.datasource.username=root
-# spring.datasource.password=your_password
-# spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-# spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
-# spring.jpa.hibernate.ddl-auto=update      # keeps existing data
+# ── Database (MySQL) ───────────────────────────────────
+spring.datasource.url=jdbc:mysql://localhost:3306/amazon_clone?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+spring.datasource.username=root
+spring.datasource.password=your_password
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
+spring.jpa.hibernate.ddl-auto=update        # keeps existing data between restarts
 
 # ── JWT ────────────────────────────────────────────────
 app.jwt.secret=<replace-with-a-long-random-string>
